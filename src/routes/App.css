@@ -1,0 +1,41 @@
+.navbar{
+  background-color: #263238;
+}
+
+.brand{
+  color: #cfd8dc;
+}
+
+.profile{
+  color: #cfd8dc;
+}
+
+/*.floating-profile{
+  margin-left: 85%;
+}*/
+
+.dropdown-item{
+  color:#607d8b;
+}
+
+.dropdown-item:hover{
+  color:#263238;
+}
+
+.p-card-body{
+  background-color: #263238;
+}
+
+.p-sidebar-right.p-sidebar-active{
+  background-color: #cfd8dc;
+  border-color:#cfd8dc;
+}
+
+.p-sidebar-right{
+  background-color: #cfd8dc;
+  border-color:#cfd8dc;
+}
+
+.fieldset{
+  margin-left: 15%;
+}
