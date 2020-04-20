@@ -12,6 +12,7 @@ import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import NovaFormacao from "./routes/NovaFormacao";
 import Departamentos from "./routes/Departamentos";
+import Funcao from "./routes/Funcao";
 
 ReactDOM.render(
     <BrowserRouter>
@@ -21,6 +22,7 @@ ReactDOM.render(
            <Route path="/Lista_Colaboradores" exact component={ListaColaborador} />
            <Route path="/Nova_Formacao" exact component={NovaFormacao}/>
            <Route path="/Departamentos" exact component={Departamentos} />
+           <Route path="/Funcao" exact component={Funcao} />
         </React.Fragment>
     </BrowserRouter>
     , document.getElementById('root')

@@ -39,3 +39,9 @@
 .fieldset{
   margin-left: 15%;
 }
+
+.select-custom{
+  margin-left: 15px;
+  width: 30%;
+  height: 35px;
+}

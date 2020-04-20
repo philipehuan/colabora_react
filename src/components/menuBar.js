@@ -66,7 +66,8 @@ export class MenuBar extends Component {
                         },
                         {
                             label:'Funções e Cargos',
-                            icon:'pi pi-fw pi-angle-double-right'
+                            icon:'pi pi-fw pi-angle-double-right',
+                            command : ()=>{window.location="Funcao"}
                         },
                     ]
                 },

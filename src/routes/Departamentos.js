@@ -5,13 +5,7 @@ import DepartamentoService from "../sevice/departamentoService";
 import "../routes/App.css";
 import Navbar_brand from "../components/navbar_brand";
 import MenuBar from "../components/menuBar";
-import axios from 'axios';
-import {Fieldset} from "primereact/fieldset";
-import {DataTable} from "primereact/datatable";
-import {Column} from "primereact/column";
-import {Button} from "primereact/button";
-import {Dialog} from "primereact/dialog";
-import {InputText} from "primereact/inputtext";
+
 import Pagination from "../components/pagination";
 import TableDepartamento from "../components/tableDepartamento";
 
