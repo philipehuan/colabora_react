@@ -29,19 +29,19 @@ class NovoColaboradorComponent extends Component{
 
             cnh_categoria:null,
             cnhs: [
-                {id : 1 ,Tipo : 'Não Possui'},
-                {id : 2 ,Tipo : 'A'},
-                {id: 3 ,Tipo : 'B'},
-                {id : 4, Tipo : 'AB'},
-                {id : 5 ,Tipo : 'C'},
-                {id : 6 ,Tipo : 'D'},
-                {id : 7 ,Tipo : 'E'}
+                {Tipo : 'Não Possui'},
+                {Tipo : 'A'},
+                {Tipo : 'B'},
+                {Tipo : 'AB'},
+                {Tipo : 'C'},
+                {Tipo : 'D'},
+                {Tipo : 'E'}
             ],
 
             sexo:null,
             sexos:[
-                {sexo:'Masculino'},
-                {sexo:'Feminino'}
+                {sexo:'M'},
+                {sexo:'F'}
             ],
 
             funcoes : [],
@@ -51,6 +51,7 @@ class NovoColaboradorComponent extends Component{
 
         this.departamentoService = new DepartamentoService();
         this.funcaoService = new funcaoService();
+        this.colaboradorService = new colaboradorService();
     }
 
     componentDidMount() {
@@ -58,9 +59,25 @@ class NovoColaboradorComponent extends Component{
         this.funcaoService.getFuncao().then(data => this.setState({funcoes:data}));
     }
 
-    handleSubmit(event){
-        this.growl.show({severity: 'success', summary: 'Sucesso!', detail: 'Novo colaborador registrado'});
+    handleSubmit(event) {
+       event.preventDefault()
+       this.colaboradorService.setColaborador({
+           nome:this.state.nome,
+           nascimento : this.state.data_nasc,
+           rg : this.state.RG,
+           cpf: this.state.CPF,
+           telefone : this.state.Telefone,
+           cnh_tipo: this.state.cnh_categoria,
+           cnh: this.state.cnh_numero,
+           sexo : this.state.sexo,
+           departamento : this.state.departamento,
+           funcao : this.state.funcao
+       })
+           .then(data => console.log(data))
+           .then(window.location.replace("/Lista_Colaboradores"))
+           // .then(window.location.reload(true));
     }
+
     render() {
         return(
            <div className="content-section">
@@ -76,8 +93,9 @@ class NovoColaboradorComponent extends Component{
 
                        <div className={"col-4"}>
                         <span className="p-float-label">
-                          <InputMask mask={"99/99/9999"} id="in2" value={this.state.data_nasc} onChange={(e) => this.setState({data_nasc: e.target.value})} />
-                          <label htmlFor="in2">Data de Nascimento</label>
+                          {/*<InputMask mask={"9999-99-99"} id="in2" value={this.state.data_nasc} onChange={(e) => this.setState({data_nasc: e.target.value})} />*/}
+                          {/*<label htmlFor="in2">Data de Nascimento</label>*/}
+                          <input type="date" className="form-control" onChange={(e) => this.setState({data_nasc: e.target.value})}  placeholder="Data de Nascimento" style={{backgroundColor:'#f0f0f0', width:'50%', height:'35px',borderRadius:'2px'}}/>
                         </span>
                        </div>
 
@@ -99,14 +117,18 @@ class NovoColaboradorComponent extends Component{
 
                        <div className={"col-4"}>
                         <span className="p-float-label">
-                          <InputMask mask={"(99) 99999-9999"} id="in5" value={this.state.Telefone} onChange={(e) => this.setState({Telefone: e.target.value})} keyfilter={/^[0-9]*$/} />
+                          <InputMask mask={"9999999-9999"} id="in5" value={this.state.Telefone} onChange={(e) => this.setState({Telefone: e.target.value})} keyfilter={/^[0-9]*$/} />
                           <label htmlFor="in5">Telefone</label>
                         </span>
                        </div>
 
                        <div className={"col-4"}>
-                          <DropDown value={this.state.cnh_categoria} options={this.state.cnhs} optionLabel={"Tipo"} placeholder={"CNH TIPO"}
-                                    onChange={(e)=>this.setState({cnh_categoria : e.value})}/>
+                          <select onChange={(e) => this.setState({cnh_categoria: e.target.value})}>
+                              <option selected>CNH Categoria</option>
+                              {this.state.cnhs.map(c => (
+                                  <option value={c.Tipo}>{c.Tipo}</option>
+                              ))}
+                          </select>
                        </div>
                    </div>
                      <br/>
@@ -119,8 +141,12 @@ class NovoColaboradorComponent extends Component{
                        </div>
 
                       <div className={"col-4"}>
-                          <DropDown optionLabel="sexo" value={this.state.sexo} options={this.state.sexos}
-                                    onChange={(e) => {this.setState({sexo: e.value})}} placeholder="Sexo"/>
+                          <select onChange={(e)=> this.setState({sexo:e.target.value})}>
+                              <option selected>Sexo</option>
+                              {this.state.sexos.map(s => (
+                                  <option value={s.sexo}>{s.sexo}</option>
+                              ))}
+                          </select>
                       </div>
 
                       <div className="col-4">

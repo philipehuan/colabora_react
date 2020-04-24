@@ -22,9 +22,9 @@
   color:#263238;
 }
 
-.p-card-body{
-  background-color: #263238;
-}
+/*.p-card-body{*/
+/*  background-color: #263238;*/
+/*}*/
 
 .p-sidebar-right.p-sidebar-active{
   background-color: #cfd8dc;
@@ -44,4 +44,8 @@
   margin-left: 15px;
   width: 30%;
   height: 35px;
+}
+
+.button_pagination.p-button.p-button-text{
+color: #212e25;
 }
