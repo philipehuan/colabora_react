@@ -5,8 +5,9 @@ import {InputText} from "primereact/inputtext";
 import funcaoService from "../sevice/FuncaoService";
 import '../routes/App.css';
 import DropDown from "./DropDownComponent";
+import {Card} from "primereact/card";
 
-const TableFuncao= ({posts, departamentos}) =>{
+const TableFuncao= ({posts, departamentos, pagination}) =>{
 
     const [displayDialog, setDisplayDialog] = useState(false);
     const [nomefuncao, setNomeFuncao] = useState('');
@@ -68,7 +69,13 @@ const TableFuncao= ({posts, departamentos}) =>{
         </form>
     </div>;
 
+    let foot = <span>
+        <span>{footer}</span>
+        <span style={{float:'right'}}>{pagination}</span>
+    </span>
+
     return(
+       <Card title={foot} style={{width:'70%',height:'50%', marginLeft:'15%', marginTop:'5px'}}>
         <table className="table table-striped">
             <thead>
             <th scope="col">Função</th>
@@ -86,8 +93,8 @@ const TableFuncao= ({posts, departamentos}) =>{
                 </tr>
             ))}
             </tbody>
-            <tfoot>{footer}</tfoot>
         </table>
+       </Card>
     );
 }
 

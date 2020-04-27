@@ -30,6 +30,7 @@ class Funcao extends Component{
         const currentPost = this.state.funcoes.slice(indexOfFirstPost, indexOfLastPost);
 
         const paginate = pageNumber =>this.setState({currentPage : pageNumber});
+        const pagination =  <Pagination postsPerPage={this.state.postsPerPage} totalPosts={this.state.funcoes.length} paginate={paginate} />
         return(
             <React.Fragment>
                 <header>
@@ -37,8 +38,7 @@ class Funcao extends Component{
                 <MenuBar />
                 </header>
 
-                <TableFuncao posts={currentPost}  departamentos={this.state.departamentos}/>
-                <Pagination postsPerPage={this.state.postsPerPage} totalPosts={this.state.funcoes.length} paginate={paginate} />
+                <TableFuncao posts={currentPost}  departamentos={this.state.departamentos} pagination={pagination}/>
             </React.Fragment>
         )
     }

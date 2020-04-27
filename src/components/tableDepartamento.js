@@ -3,10 +3,11 @@ import {Button} from "primereact/button";
 import {Dialog} from "primereact/dialog";
 import {InputText} from "primereact/inputtext";
 import DepartamentoService from "../sevice/departamentoService";
+import {Card} from "primereact/card";
 
-const TableDepartamento= ({posts}) =>{
+const TableDepartamento= ({posts, pagination}) =>{
 
-    const [displayDialog, setDisplayDialog] = useState(false);
+        const [displayDialog, setDisplayDialog] = useState(false);
     const [nomedepartamento, setNomeDepartamento] = useState('');
 
     let departamentoservice = new DepartamentoService();
@@ -46,7 +47,7 @@ const TableDepartamento= ({posts}) =>{
     }
 
     let footer = <div className="p-clearfix" style={{width:'10%'}}>
-        <Button label="Add" icon="pi pi-plus" onClick={() => onClick()} className={"p-button-info"} />
+        <Button icon="pi pi-plus" onClick={() => onClick()} className={"p-button-primary"} tooltip="Novo Departamento" />
         <form onSubmit={handleSubmit}>
             <Dialog header="Novo Departamento" visible={displayDialog} style={{width: '50vw'}} onHide={() => onHide()} modal={false}
                     footer={renderFooter('displayDialog')}>
@@ -57,7 +58,13 @@ const TableDepartamento= ({posts}) =>{
         </form>
     </div>;
 
+    let bar = <div>
+        <span>{footer}</span>
+        <span style={{float:'right'}}>{pagination}</span>
+    </div>
+
     return(
+        <Card title={bar} style={{width:'70%',height:'50%', marginLeft:'15%', marginTop:'5px'}}>
         <table className="table table-striped">
             <thead>
                <th scope="col">Departamento</th>
@@ -67,12 +74,12 @@ const TableDepartamento= ({posts}) =>{
             {posts.map(dep =>(
                 <tr key={dep.id}>
                     <td>{dep.nomedepartamento}</td>
-                    <td><button className="btn btn-danger" onClick={() => onDelete(dep.id)}><i className="pi pi-trash"></i></button></td>
+                    <td><Button className="p-button-danger" icon="pi pi-trash" onClick={() => onDelete(dep.id)}></Button></td>
                 </tr>
             ))}
             </tbody>
-            <tfoot>{footer}</tfoot>
         </table>
+        </Card>
     );
 }
 

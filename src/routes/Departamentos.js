@@ -34,6 +34,7 @@ class Departamentos extends Component{
         const currentPost = this.state.departamentos.slice(indexOfFirstPost, indexOfLastPost);
 
         const paginate = pageNumber =>this.setState({currentPage : pageNumber});
+        const pagination = <Pagination postsPerPage={this.state.postsPerPage} totalPosts={this.state.departamentos.length} paginate={paginate} />;
 
         return(
            <React.Fragment>
@@ -42,8 +43,7 @@ class Departamentos extends Component{
                     <MenuBar />
 
                 </header>
-               <TableDepartamento posts={currentPost} />
-                <Pagination postsPerPage={this.state.postsPerPage} totalPosts={this.state.departamentos.length} paginate={paginate} />
+               <TableDepartamento posts={currentPost} pagination={pagination} />
            </React.Fragment>
         )
     }

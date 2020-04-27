@@ -11,7 +11,7 @@ class ListaColaborador extends Component{
         this.state={
               colaboradores : [],
               currentPage : 1,
-              postsPerPage:3
+              postsPerPage:10
         }
         this.colaboradorService = new colaboradorService();
     }
