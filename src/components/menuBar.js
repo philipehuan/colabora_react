@@ -4,7 +4,7 @@ import React, {Component} from "react";
 import {Menubar} from "primereact/menubar";
 import "../routes/App.css";
 import ProfilePerson from "./profilePerson";
-import {withRouter} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 
 
 
@@ -27,7 +27,7 @@ export class MenuBar extends Component {
                                 {
                                     label:'Novo Colaborador',
                                     icon:'pi pi-fw pi-plus',
-                                    command:()=>{window.location="/Novo_Colaborador"},
+                                    command:()=>{window.location= "Novo_Colaborador"},
                                 },
                                 {
                                     label:'Listar Colaboradores',

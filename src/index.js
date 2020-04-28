@@ -18,11 +18,11 @@ ReactDOM.render(
     <BrowserRouter>
         <React.Fragment>
            <Route path="/" exact component={App}/>
-           <Route path="/Novo_Colaborador" exact component={NovoColaborador} />
-           <Route path="/Lista_Colaboradores" exact component={ListaColaborador} />
-           <Route path="/Nova_Formacao" exact component={NovaFormacao}/>
-           <Route path="/Departamentos" exact component={Departamentos} />
-           <Route path="/Funcao" exact component={Funcao} />
+           <Route path="/Novo_Colaborador" component={NovoColaborador} />
+           <Route path="/Lista_Colaboradores" component={ListaColaborador} />
+           <Route path="/Nova_Formacao" component={NovaFormacao}/>
+           <Route path="/Departamentos" component={Departamentos} />
+           <Route path="/Funcao" component={Funcao} />
         </React.Fragment>
     </BrowserRouter>
     , document.getElementById('root')

@@ -52,7 +52,7 @@ const TableFuncao= ({posts, departamentos, pagination}) =>{
     }
 
     let footer = <div className="p-clearfix" style={{width:'10%'}}>
-        <Button label="Add" icon="pi pi-plus" onClick={() => onClick()} className={"p-button-info"} />
+        <Button icon="pi pi-plus" onClick={() => onClick()} className={"p-button-primary"} />
         <form onSubmit={handleSubmit}>
             <Dialog header="Novo Departamento" visible={displayDialog} style={{width: '50vw'}} onHide={() => onHide()} modal={false}
                     footer={renderFooter('displayDialog')}>

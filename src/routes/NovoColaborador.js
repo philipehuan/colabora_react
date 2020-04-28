@@ -4,6 +4,7 @@ import "../routes/App.css";
 import Navbar_brand from "../components/navbar_brand";
 import {MenuBar} from "../components/menuBar";
 import NovoColaboradorComponent from "../components/Novo_colaboradorComponent";
+import {withRouter} from "react-router-dom";
 
 class NovoColaborador extends Component{
     constructor(props) {
@@ -27,4 +28,4 @@ class NovoColaborador extends Component{
 
 }
 
-export default NovoColaborador;
+export default withRouter(NovoColaborador);
