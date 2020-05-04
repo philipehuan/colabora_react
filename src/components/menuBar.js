@@ -27,7 +27,7 @@ export class MenuBar extends Component {
                                 {
                                     label:'Novo Colaborador',
                                     icon:'pi pi-fw pi-plus',
-                                    command:()=>{window.location= "Novo_Colaborador"},
+                                    command:()=>{window.location= "novo_colaborador"},
                                 },
                                 {
                                     label:'Listar Colaboradores',
@@ -44,11 +44,12 @@ export class MenuBar extends Component {
                                 {
                                     label : 'Cadastrar Formação',
                                     icon : 'pi pi-fw pi-plus',
-                                    command:()=>{window.location="Nova_Formacao"}
+                                    command:()=>{window.location="formacao_colaborador"}
                                 },
                                 {
                                   label : 'Listar Formação',
                                   icon : 'pi fw-pi pi-list',
+                                  command : () => {window.location="lista_formacao"}
                                 },
                             ]
                         },
@@ -62,12 +63,12 @@ export class MenuBar extends Component {
                         {
                             label:'Departamentos',
                             icon:'pi pi-fw pi-angle-double-right',
-                            command : ()=>{window.location="Departamentos"}
+                            command : ()=>{window.location="departamentos"}
                         },
                         {
                             label:'Funções e Cargos',
                             icon:'pi pi-fw pi-angle-double-right',
-                            command : ()=>{window.location="Funcao"}
+                            command : ()=>{window.location="funcao"}
                         },
                     ]
                 },

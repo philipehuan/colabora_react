@@ -3,7 +3,7 @@ import  axios from "axios";
 class colaboradorService {
     constructor() {
         this.state = {
-            url : 'https://colaborate.herokuapp.com/colabora/coreapp/colaborador',
+            url : 'http://127.0.0.1:8000/colabora/coreapp/colaborador',
         }
     }
 

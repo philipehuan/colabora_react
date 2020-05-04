@@ -10,19 +10,21 @@ import { BrowserRouter , Route } from "react-router-dom";
 import 'primereact/resources/themes/rhea/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
-import NovaFormacao from "./routes/NovaFormacao";
 import Departamentos from "./routes/Departamentos";
 import Funcao from "./routes/Funcao";
+import FormacaoColaborador from "./routes/Formacao";
+import lista_Formacao from "./routes/Lista_Formacao";
 
 ReactDOM.render(
     <BrowserRouter>
         <React.Fragment>
            <Route path="/" exact component={App}/>
-           <Route path="/Novo_Colaborador" component={NovoColaborador} />
+           <Route path="/novo_colaborador" component={NovoColaborador} />
            <Route path="/Lista_Colaboradores" component={ListaColaborador} />
-           <Route path="/Nova_Formacao" component={NovaFormacao}/>
-           <Route path="/Departamentos" component={Departamentos} />
-           <Route path="/Funcao" component={Funcao} />
+           <Route path="/departamentos" component={Departamentos} />
+           <Route path="/funcao" component={Funcao} />
+           <Route path="/formacao_colaborador" component={FormacaoColaborador} />
+           <Route path="/lista_formacao" component={lista_Formacao} />
         </React.Fragment>
     </BrowserRouter>
     , document.getElementById('root')
