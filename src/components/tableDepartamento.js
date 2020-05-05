@@ -7,7 +7,7 @@ import {Card} from "primereact/card";
 
 const TableDepartamento= ({posts, pagination}) =>{
 
-        const [displayDialog, setDisplayDialog] = useState(false);
+    const [displayDialog, setDisplayDialog] = useState(false);
     const [nomedepartamento, setNomeDepartamento] = useState('');
 
     let departamentoservice = new DepartamentoService();

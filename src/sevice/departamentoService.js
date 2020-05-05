@@ -4,7 +4,7 @@ import axios from 'axios';
 
      constructor() {
          this.state = {
-             url : 'https://colaborate.herokuapp.com/colabora/coreapp/departamento',
+             url : 'http://localhost:8000/colabora/coreapp/departamento',
          }
      }
 

@@ -13,12 +13,20 @@ class ProfilePerson extends Component{
             visibleRight: false,
             items : [
                 {
+                  label:'Home',
+                  icon : 'pi pi-home',
+                  command : () => {window.location= "/"},
+                },
+                {
                     label : 'Perfil',
                     icon : 'pi pi-user-edit',
                 },
                 {
                     label : 'Configurações',
                     icon : "pi pi-cog",
+                },
+                {
+                    separator : true,
                 },
                 {
                     label : 'Sair',

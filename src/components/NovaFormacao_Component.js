@@ -56,7 +56,7 @@ class NovaFormacao_Component extends Component{
     render() {
         return(
             <div className={"container-fluid"}>
-              <Fieldset legend={"Nova Formação"} className={"fieldset"} style={{width:"70%"}}>
+              <Fieldset legend={"Nova Formação"} className={"fieldset"} style={{width:"80%"}}>
                   <form onSubmit={this.handleSubmit}>
                   <div className={"row"}>
                       <div className={"col-4"}>

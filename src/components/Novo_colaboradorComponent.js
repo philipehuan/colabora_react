@@ -74,8 +74,8 @@ class NovoColaboradorComponent extends Component{
            funcao : this.state.funcao
        })
            .then(data => console.log(data))
-           .then(window.location.replace("/Lista_Colaboradores"))
-           // .then(window.location.reload(true));
+           // .then(window.location.replace("/Lista_Colaboradores"))
+           .then(window.location.reload(true));
     }
 
     render() {
@@ -93,9 +93,8 @@ class NovoColaboradorComponent extends Component{
 
                        <div className={"col-4"}>
                         <span className="p-float-label">
-                          {/*<InputMask mask={"9999-99-99"} id="in2" value={this.state.data_nasc} onChange={(e) => this.setState({data_nasc: e.target.value})} />*/}
-                          {/*<label htmlFor="in2">Data de Nascimento</label>*/}
-                          <input type="date" className="form-control" onChange={(e) => this.setState({data_nasc: e.target.value})}  placeholder="Data de Nascimento" style={{backgroundColor:'#f0f0f0', width:'50%', height:'35px',borderRadius:'2px'}}/>
+                          <InputMask mask={"99-99-9999"} id="in2" value={this.state.data_nasc} onChange={(e) => this.setState({data_nasc: e.target.value})} />
+                          <label htmlFor="in2">Data de Nascimento</label>
                         </span>
                        </div>
 
