@@ -1,0 +1,14 @@
+.input-login {
+    height: 50px;
+    margin-left: 20px;
+    background-color:#263238;
+    border: none;
+    border-radius: 3px;
+    color: mintcream;
+}
+
+.input-login:focus{
+    -webkit-box-shadow: 2px -1px 34px -9px rgba(0,0,0,0.84);
+    -moz-box-shadow: 2px -1px 34px -9px rgba(0,0,0,0.84);
+    box-shadow: 2px -1px 34px -9px rgba(0,0,0,0.84);
+}

@@ -14,11 +14,13 @@ import Departamentos from "./routes/Departamentos";
 import Funcao from "./routes/Funcao";
 import FormacaoColaborador from "./routes/Formacao";
 import lista_Formacao from "./routes/Lista_Formacao";
+import Login from "./routes/Login";
 
 ReactDOM.render(
     <BrowserRouter>
         <React.Fragment>
-           <Route path="/" exact component={App}/>
+            <Route path="/" exact component={Login} />
+           <Route path="/home" exact component={App}/>
            <Route path="/novo_colaborador" component={NovoColaborador} />
            <Route path="/Lista_Colaboradores" component={ListaColaborador} />
            <Route path="/departamentos" component={Departamentos} />
